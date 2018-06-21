@@ -219,7 +219,7 @@ public class BlurLayout extends FrameLayout {
         leftOffset = x + leftOffset >= 0 ? leftOffset : 0;
 
         int rightOffset = xPadding;
-        rightOffset = x + getWidth() + rightOffset <= screenWidth ? rightOffset : screenWidth - getWidth() - x;
+        rightOffset = x + getWidth() - rightOffset <= screenWidth ? rightOffset : screenWidth + getWidth() - x;
 
         int topOffset = -yPadding;
         topOffset = y + topOffset >= 0 ? topOffset : 0;

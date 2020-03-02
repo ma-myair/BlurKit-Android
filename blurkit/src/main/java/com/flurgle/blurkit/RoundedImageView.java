@@ -33,12 +33,7 @@ public class RoundedImageView extends ImageView {
             final int color = 0xff000000;
             Rect bitmapBounds = myDrawable.getBounds();
             final RectF rectF = new RectF(bitmapBounds);
-            int saveCount = canvas.saveLayer(rectF, null,
-                    Canvas.MATRIX_SAVE_FLAG |
-                            Canvas.CLIP_SAVE_FLAG |
-                            Canvas.HAS_ALPHA_LAYER_SAVE_FLAG |
-                            Canvas.FULL_COLOR_LAYER_SAVE_FLAG |
-                            Canvas.CLIP_TO_LAYER_SAVE_FLAG);
+            int saveCount = canvas.saveLayer(rectF, null, Canvas.ALL_SAVE_FLAG);
             getImageMatrix().mapRect(rectF);
 
             paint.setAntiAlias(true);
